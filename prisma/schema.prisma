@@ -20,7 +20,7 @@ model User {
   id        String   @id @default(uuid())
   name      String
   email     String   @unique
-  password  String
+  password  String?
   events    Event[]
   createdAt DateTime @default(now())
 }
@@ -29,7 +29,7 @@ model Event {
   id          String   @id @default(uuid())
   title       String
   description String
-  date        DateTime
+  date        DateTime?
   organizer   User     @relation(fields: [organizerId], references: [id])
   organizerId String
   createdAt   DateTime @default(now())
