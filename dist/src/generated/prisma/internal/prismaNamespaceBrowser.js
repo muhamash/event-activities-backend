@@ -48,7 +48,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NullsOrder = exports.QueryMode = exports.SortOrder = exports.EventScalarFieldEnum = exports.UserScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.Decimal = void 0;
+exports.NullsOrder = exports.QueryMode = exports.SortOrder = exports.PaymentScalarFieldEnum = exports.ReviewScalarFieldEnum = exports.ParticipantScalarFieldEnum = exports.EventScalarFieldEnum = exports.ProfileScalarFieldEnum = exports.UserScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.Decimal = void 0;
 const runtime = __importStar(require("@prisma/client/runtime/index-browser"));
 exports.Decimal = runtime.Decimal;
 exports.NullTypes = {
@@ -76,7 +76,11 @@ exports.JsonNull = runtime.JsonNull;
 exports.AnyNull = runtime.AnyNull;
 exports.ModelName = {
     User: 'User',
-    Event: 'Event'
+    Profile: 'Profile',
+    Event: 'Event',
+    Participant: 'Participant',
+    Review: 'Review',
+    Payment: 'Payment'
 };
 /*
  * Enums
@@ -89,17 +93,59 @@ exports.TransactionIsolationLevel = {
 };
 exports.UserScalarFieldEnum = {
     id: 'id',
-    name: 'name',
+    fullName: 'fullName',
     email: 'email',
     password: 'password',
-    createdAt: 'createdAt'
+    role: 'role',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.ProfileScalarFieldEnum = {
+    id: 'id',
+    userId: 'userId',
+    bio: 'bio',
+    image: 'image',
+    location: 'location',
+    interests: 'interests'
 };
 exports.EventScalarFieldEnum = {
     id: 'id',
+    hostId: 'hostId',
     title: 'title',
+    category: 'category',
     description: 'description',
+    image: 'image',
     date: 'date',
-    organizerId: 'organizerId',
+    location: 'location',
+    requiredMin: 'requiredMin',
+    requiredMax: 'requiredMax',
+    joiningFee: 'joiningFee',
+    status: 'status',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.ParticipantScalarFieldEnum = {
+    id: 'id',
+    eventId: 'eventId',
+    userId: 'userId',
+    joinedAt: 'joinedAt'
+};
+exports.ReviewScalarFieldEnum = {
+    id: 'id',
+    eventId: 'eventId',
+    userId: 'userId',
+    rating: 'rating',
+    comment: 'comment',
+    createdAt: 'createdAt'
+};
+exports.PaymentScalarFieldEnum = {
+    id: 'id',
+    eventId: 'eventId',
+    userId: 'userId',
+    amount: 'amount',
+    status: 'status',
+    provider: 'provider',
+    txnId: 'txnId',
     createdAt: 'createdAt'
 };
 exports.SortOrder = {

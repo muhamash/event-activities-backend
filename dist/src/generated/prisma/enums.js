@@ -9,3 +9,20 @@
 * 🟢 You can import this file directly.
 */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PaymentStatus = exports.EventStatus = exports.UserRole = void 0;
+exports.UserRole = {
+    USER: 'USER',
+    HOST: 'HOST',
+    ADMIN: 'ADMIN'
+};
+exports.EventStatus = {
+    OPEN: 'OPEN',
+    FULL: 'FULL',
+    CANCELLED: 'CANCELLED',
+    COMPLETED: 'COMPLETED'
+};
+exports.PaymentStatus = {
+    PENDING: 'PENDING',
+    SUCCESS: 'SUCCESS',
+    FAILED: 'FAILED'
+};
